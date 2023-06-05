@@ -7,6 +7,7 @@ import FetchData from './pages/FetchData';
 import Navbar from './components/Navbar';
 import './App.css'
 import { ThemeContextCreated } from './pages/ThemeContext';
+import {ToastContainer} from 'react-toastify'
 
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
 
         <BrowserRouter>
         <Navbar/>
-        
+        <ToastContainer/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/about' element={<About/>}/>
@@ -30,7 +31,9 @@ const App = () => {
 
         {/* <Footer/> */}
         </BrowserRouter>
-        <button onClick={toggleTheme}>Change Theme</button>
+        <div className="text-center p-3 bg-light shadow mt-3">
+        <button className='btn btn-dark theme ' onClick={toggleTheme}>Change Theme</button>
+        </div>
         </div>
     </div>
 
